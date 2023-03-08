@@ -25,17 +25,11 @@ function solution(C, inputTestCase) {
         const sumArr = arr.reduce((acc, el) => {
             return el + acc;
         }, 0);
-        const average = sumArr / n;
-
-        let cnt = 0;
-        for (let i = 0; i < n; i++) {
-            if (average < arr[i]) {
-                cnt++;
-            }
-        }   
+        const average = sumArr / n;        
+        let cnt = arr.filter(x => x > average).length;        
 
         const result = ((cnt / n) * 100).toFixed(3);
-        console.log(result + '%');
+        console.log(result + '%');        
     }
 }
 
